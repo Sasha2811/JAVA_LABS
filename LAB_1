@@ -1,0 +1,50 @@
+TASK_1
+private static void printArray(int[][] arr){
+for (int i = 0; i < arr.length; i++) {
+for (int j = 0; j < arr.length; j++) {
+System.out.print(arr[i][j] + " ");
+}
+System.out.println();
+}
+}
+public static void main(String[] args) {
+System.out.println("Enter size of array: ");
+Scanner scn = new Scanner(System.in);
+int size = scn.nextInt();
+Random rnd = new Random();
+int[][] array = new int [size][size];
+for (int i = 0; i < size; i++) {
+for (int j = 0; j < size; j++) {
+array[i][j] = rnd.nextInt(9);
+}
+}
+printArray(array);
+
+    System.out.println("********************");
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            if(i + j == size - 1 && array[i][j] % 2 == 0){
+                System.out.print(array[i][j]);
+            }
+        }
+    }
+}
+
+TASK_2
+private static int[] fillArray(int begin, int end, int step){
+int[] array = new int[end];
+
+    for (int i = 0; i < end; i++) {
+        array[i] = begin;
+        begin+=step;
+    }
+
+    for (int i = 0; i < array.length / step + 1; i++) {
+        System.out.print(array[i] + " ");
+    }
+    return array;
+}
+
+public static void main(String[] args) {
+    int[] arr = fillArray(0, 200,50);
+}
